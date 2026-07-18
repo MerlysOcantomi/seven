@@ -58,17 +58,24 @@ export async function GET(request: NextRequest) {
     const cookie = buildSessionCookie(token)
     const response = NextResponse.redirect(new URL(safeNext, request.url))
 
+    /**
+     * DEMO cookies must survive inside the v0 preview <iframe>, which loads the
+     * app on a different origin. Cross-site iframes only receive cookies marked
+     * `SameSite=None; Secure`. With the default `SameSite=Lax` the cookie is set
+     * but never sent back, so the middleware keeps redirecting here in a loop
+     * and the preview stays blank. Force None+Secure for demo mode only.
+     */
     response.cookies.set(cookie.name, cookie.value, {
       httpOnly: cookie.httpOnly,
-      secure: cookie.secure,
-      sameSite: cookie.sameSite,
+      secure: true,
+      sameSite: "none",
       path: cookie.path,
       maxAge: cookie.maxAge,
     })
     response.cookies.set("wf_workspace", activeWorkspaceId, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       path: "/",
       maxAge: 60 * 60 * 24 * 365,
     })
