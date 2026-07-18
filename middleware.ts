@@ -53,10 +53,33 @@ function isPlatformPath(p: string): boolean {
   return PLATFORM_PATHS.some((pp) => p === pp || p.startsWith(pp + "/"))
 }
 
+const DEMO_BYPASS = process.env.DEMO_BYPASS_AUTH === "true"
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   if (isPublic(pathname)) return NextResponse.next()
+
+  /**
+   * DEMO MODE — total login bypass for design review.
+   *
+   * When DEMO_BYPASS_AUTH=true and the request has no internal session cookie,
+   * we auto-redirect page loads to the demo auto-login endpoint (which signs in
+   * a fixed demo user and sets the session cookie), then continues normally on
+   * subsequent requests. API calls without a session simply pass through so the
+   * page can hydrate. This never runs in production (env-gated).
+   */
+  if (DEMO_BYPASS && !isClientPortalRoute(pathname)) {
+    const hasSession = !!request.cookies.get(INTERNAL_COOKIE)?.value
+    if (!hasSession) {
+      if (pathname.startsWith("/api/")) {
+        return NextResponse.next()
+      }
+      const loginUrl = new URL("/api/auth/demo-login", request.url)
+      loginUrl.searchParams.set("next", pathname + request.nextUrl.search)
+      return NextResponse.redirect(loginUrl)
+    }
+  }
 
   // Client portal routes
   if (isClientPortalRoute(pathname)) {
