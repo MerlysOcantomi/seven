@@ -4,7 +4,11 @@ import { jwtVerify } from "jose"
 const INTERNAL_COOKIE = "7f-session"
 const CLIENT_COOKIE = "7f-client-session"
 
-const PUBLIC_PATHS = ["/login", "/api/auth", "/cliente/login", "/api/cliente/auth", "/api/inbox/public", "/api/inbox/email/inbound", "/widget"]
+// NOTE: "/finesse" is an isolated, self-contained DESIGN DEMO (beauty vertical
+// brand proposal). It uses only hardcoded demo data, touches no production
+// flows, and is made public here so it can be reviewed without auth. Safe to
+// remove this entry to re-gate it behind the normal session.
+const PUBLIC_PATHS = ["/login", "/api/auth", "/cliente/login", "/api/cliente/auth", "/api/inbox/public", "/api/inbox/email/inbound", "/widget", "/finesse"]
 const STATIC_PREFIXES = ["/_next", "/favicon.ico", "/public"]
 
 function isPublic(pathname: string): boolean {

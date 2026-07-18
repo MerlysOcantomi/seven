@@ -1,0 +1,202 @@
+/* ============================================================
+   FINESSE — Beauty vertical brand system (isolated design demo)
+   Scoped entirely under `.finesse` so it never leaks into 7F Core.
+   Aesthetic: soft luxury, warm ivory canvas, nude-rose + champagne
+   gold accents, editorial serif display, clean sans UI.
+   ============================================================ */
+
+.finesse {
+  /* Warm neutral canvas + surfaces */
+  --f-canvas: #f7f0e9;
+  --f-canvas-2: #f1e7dd;
+  --f-surface: #fffdfb;
+  --f-surface-2: #f8f0e8;
+  --f-surface-soft: #f4e9e1;
+
+  /* Brand — nude rose (primary) */
+  --f-rose: #c0836f;
+  --f-rose-deep: #a5644f;
+  --f-rose-soft: #f3e0d7;
+  --f-rose-tint: #faece5;
+
+  /* Accent — champagne gold */
+  --f-gold: #b8955c;
+  --f-gold-soft: #ece0c8;
+
+  /* Ink + text (warm near-black browns) */
+  --f-ink: #3a2e28;
+  --f-muted: #8a7568;
+  --f-faint: #b3a294;
+
+  /* Lines + structure */
+  --f-line: #ecdfd2;
+  --f-line-strong: #e0cdbc;
+
+  /* Support hues (kept warm + muted) */
+  --f-sage: #8a9a82;
+  --f-sage-soft: #e6ece1;
+  --f-plum: #9c7186;
+  --f-plum-soft: #efe3ea;
+  --f-blush: #d98f8f;
+
+  --f-shadow: 20px 20px 60px rgba(120, 84, 66, 0.08);
+  --f-shadow-sm: 0 2px 14px rgba(120, 84, 66, 0.06);
+  --f-shadow-lg: 0 24px 60px rgba(120, 84, 66, 0.14);
+  --f-radius: 22px;
+  --f-radius-sm: 14px;
+
+  background-color: var(--f-canvas);
+  color: var(--f-ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.01em;
+}
+
+/* ---- Typography helpers ---- */
+.finesse .f-display {
+  font-family: var(--font-cinzel), serif;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+.finesse .f-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+  letter-spacing: 0.005em;
+}
+.finesse .f-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--f-gold);
+  font-weight: 600;
+}
+
+/* ---- Surfaces ---- */
+.finesse .f-card {
+  background: var(--f-surface);
+  border: 1px solid var(--f-line);
+  border-radius: var(--f-radius);
+  box-shadow: var(--f-shadow-sm);
+}
+.finesse .f-card-soft {
+  background: var(--f-surface-2);
+  border: 1px solid var(--f-line);
+  border-radius: var(--f-radius);
+}
+
+/* ---- Buttons ---- */
+.finesse .f-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.35rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.finesse .f-btn-primary {
+  background: var(--f-rose);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(165, 100, 79, 0.24);
+}
+.finesse .f-btn-primary:hover {
+  background: var(--f-rose-deep);
+}
+.finesse .f-btn-ghost {
+  background: transparent;
+  color: var(--f-ink);
+  border: 1px solid var(--f-line-strong);
+}
+.finesse .f-btn-ghost:hover {
+  background: var(--f-surface-2);
+}
+.finesse .f-btn-gold {
+  background: var(--f-gold);
+  color: #fff;
+}
+
+/* ---- Chips / pills ---- */
+.finesse .f-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.28rem 0.7rem;
+  letter-spacing: 0.02em;
+}
+.finesse .f-chip-rose { background: var(--f-rose-soft); color: var(--f-rose-deep); }
+.finesse .f-chip-gold { background: var(--f-gold-soft); color: #8a6a2f; }
+.finesse .f-chip-sage { background: var(--f-sage-soft); color: #566b4d; }
+.finesse .f-chip-plum { background: var(--f-plum-soft); color: #7a4f66; }
+.finesse .f-chip-neutral { background: var(--f-surface-soft); color: var(--f-muted); }
+
+/* ---- Avatar (initials) ---- */
+.finesse .f-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: var(--font-cormorant), serif;
+  letter-spacing: 0.02em;
+  color: var(--f-rose-deep);
+  background: var(--f-rose-soft);
+  border: 1px solid var(--f-line);
+}
+
+/* ---- Divider ---- */
+.finesse .f-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--f-line-strong), transparent);
+}
+
+/* ---- Scrollbars (soft) ---- */
+.finesse *::-webkit-scrollbar { width: 8px; height: 8px; }
+.finesse *::-webkit-scrollbar-thumb { background: var(--f-line-strong); border-radius: 999px; }
+.finesse *::-webkit-scrollbar-track { background: transparent; }
+
+/* ---- Nav items ---- */
+.finesse .f-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 14px;
+  color: var(--f-muted);
+  font-weight: 500;
+  transition: all 0.18s ease;
+}
+.finesse .f-nav-item:hover { background: var(--f-surface-2); color: var(--f-ink); }
+.finesse .f-nav-item[data-active="true"] {
+  background: var(--f-rose-tint);
+  color: var(--f-rose-deep);
+  font-weight: 600;
+}
+
+/* ---- Bottom nav (mobile) ---- */
+.finesse .f-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  padding: 0.4rem 0;
+  color: var(--f-faint);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color 0.18s ease;
+}
+.finesse .f-tab[data-active="true"] { color: var(--f-rose-deep); }
+
+/* subtle entrance */
+@keyframes f-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.finesse .f-rise { animation: f-rise 0.5s ease both; }
