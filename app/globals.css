@@ -67,38 +67,42 @@
      SYSTEM TOKENS — 7F PREMIUM COLOR LANGUAGE
      Base global del SaaS
      ========================================================== */
-  --app-canvas: #16112A;
-  --app-sidebar: #141126;
-  --app-surface-dark: #211A3A;
-  --app-surface-dark-elevated: #2C2448;
-  --app-surface-dark-hover: #382E5C;
+  /* ── ECLIPSE — deep blue-black canvas with electric indigo accent ──
+     Retheme of the Midnight family: purple-black surfaces become near-black
+     blue-grey planes, and the violet accent becomes an electric indigo.
+     Everything else cascades from these source tokens. */
+  --app-canvas: #08090F;
+  --app-sidebar: #0A0B12;
+  --app-surface-dark: #12141D;
+  --app-surface-dark-elevated: #191C27;
+  --app-surface-dark-hover: #222635;
 
-  --surface-1: #EEEAF7;
-  --surface-2: #F3EFFA;
-  --surface-3: #F1EDF9;
-  --surface-4: #E9E4F3;
+  --surface-1: #EBEEF5;
+  --surface-2: #F2F4F9;
+  --surface-3: #EEF1F7;
+  --surface-4: #E4E8F1;
 
-  --accent-primary: #8B5CFF;
-  --accent-primary-hover: #9A70FF;
-  --accent-on-dark: #C4B2FF;
-  --accent-muted: rgba(139, 92, 255, 0.16);
-  --accent-muted-border: rgba(139, 92, 255, 0.36);
-  --accent-soft: #EDE7FF;
-  --accent-rich: #5B21B6;
+  --accent-primary: #4F6BFF;
+  --accent-primary-hover: #6982FF;
+  --accent-on-dark: #A9B8FF;
+  --accent-muted: rgba(79, 107, 255, 0.16);
+  --accent-muted-border: rgba(79, 107, 255, 0.38);
+  --accent-soft: #E6EAFF;
+  --accent-rich: #2A3DB8;
 
-  --text-primary-dark: #1F1B2D;
-  --text-secondary-dark: #6F6885;
+  --text-primary-dark: #12141D;
+  --text-secondary-dark: #64697A;
 
-  --text-primary-light: #F2EEFF;
-  --text-secondary-light: #B8AED0;
-  --text-tertiary-light: #8B80A3;
+  --text-primary-light: #EEF1F8;
+  --text-secondary-light: #A6ADBF;
+  --text-tertiary-light: #767D91;
 
-  --border-light: #E7E1F0;
+  --border-light: #E2E6EF;
   --border-dark: rgba(255, 255, 255, 0.08);
   --border-dark-strong: rgba(255, 255, 255, 0.14);
 
-  --surface-selected: #E6DEFF;
-  --surface-hover: #F4F0FB;
+  --surface-selected: #DCE2FF;
+  --surface-hover: #F1F3F9;
   --surface-card: var(--surface-2);
   --surface-card-foreground: var(--text-primary-dark);
   --surface-card-border: var(--border-light);
@@ -190,7 +194,7 @@
   --accent-foreground: var(--text-primary-light);
   --border: var(--border-dark);
   --input: var(--border-dark);
-  --ring: rgba(139, 92, 255, 0.32);
+  --ring: rgba(79, 107, 255, 0.34);
 
   /* ==========================================================
      INBOX TOKENS — MAPEADOS DESDE EL SISTEMA
@@ -212,7 +216,7 @@
   --inbox-list-text: var(--text-primary-light);
   --inbox-list-text-secondary: var(--text-secondary-light);
   --inbox-list-selected: var(--accent-primary);
-  --inbox-list-selected-bg: rgba(139, 92, 255, 0.2);
+  --inbox-list-selected-bg: rgba(79, 107, 255, 0.2);
 
   /* ── INBOX COLUMN LAYERING — the contract every theme follows ──
      Thread = the deepest "content" plane (the reading area recedes); the list +
@@ -222,13 +226,13 @@
   --inbox-chat-background: var(--app-canvas);
   --inbox-chat-surface: var(--app-surface-dark-elevated);
   /* Outbound bubble: restrained purple — premium, less neon than raw accent ramp */
-  --inbox-chat-bubble-outbound: #7A6AE0;
-  --inbox-chat-bubble-outbound-gradient: linear-gradient(142deg, #7360D4 0%, #5F4AB8 48%, #4A3A96 100%);
-  --inbox-chat-bubble-outbound-shadow: rgba(72, 58, 150, 0.11);
-  --inbox-chat-bubble-outbound-shadow-hover: rgba(72, 58, 150, 0.15);
-  --inbox-chat-meta-outbound-border: #3D2F62;
-  --inbox-chat-meta-outbound-bg: #2E2548;
-  --inbox-chat-meta-outbound-text: #E4DCFA;
+  --inbox-chat-bubble-outbound: #4F6BFF;
+  --inbox-chat-bubble-outbound-gradient: linear-gradient(142deg, #4F6BFF 0%, #3B54E0 48%, #2A3DB8 100%);
+  --inbox-chat-bubble-outbound-shadow: rgba(42, 61, 184, 0.14);
+  --inbox-chat-bubble-outbound-shadow-hover: rgba(42, 61, 184, 0.20);
+  --inbox-chat-meta-outbound-border: #2A3468;
+  --inbox-chat-meta-outbound-bg: #1B2140;
+  --inbox-chat-meta-outbound-text: #D9E0FA;
   /* Inbound bubble surface — translucent white over the canvas. These equal the
      literal utilities the bubble used before (white/0.06 fill, /0.10 border,
      /0.09 hover), so Midnight is unchanged; light themes override with a solid. */
@@ -277,8 +281,8 @@
   --inbox-urgency: #F08A8E;
   --inbox-urgency-soft: rgba(232, 111, 116, 0.14);
   --inbox-destructive-soft: rgba(232, 111, 116, 0.14);
-  --inbox-focus: #C4B2FF;
-  --inbox-focus-soft: rgba(139, 92, 255, 0.16);
+  --inbox-focus: #A9B8FF;
+  --inbox-focus-soft: rgba(79, 107, 255, 0.16);
 
   /* ==========================================================
      AGENT IDENTITY TOKENS — per-agent accent for the Agents roster.
@@ -308,12 +312,12 @@
   --inbox-voice-dictate-border: rgba(232, 111, 116, 0.24);
   --inbox-voice-compose-bg: var(--accent-soft);
   --inbox-voice-compose-text: var(--accent-primary);
-  --inbox-voice-compose-border: rgba(139, 92, 255, 0.22);
+  --inbox-voice-compose-border: rgba(79, 107, 255, 0.24);
   
   /* === ICONOS COLORIDOS PREMIUM === */
   --inbox-urgent-color: #E86F74;
   --inbox-lead-color: var(--inbox-lead);
-  --inbox-unread-color: #9B8EF5;
+  --inbox-unread-color: #7E90FF;
   --inbox-waiting-color: #C9A86A;
   --inbox-done-color: #8FC6A2;
   --inbox-archive-color: #8E88A3;

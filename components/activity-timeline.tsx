@@ -65,7 +65,7 @@ const TYPE_CONFIG: Record<string, { icon: LucideIcon; color: string; label: stri
   updated: { icon: Pencil, color: "text-blue-500 bg-blue-500/10", label: "Updated" },
   deleted: { icon: Trash2, color: "text-red-500 bg-red-500/10", label: "Deleted" },
   status_change: { icon: RefreshCw, color: "text-amber-500 bg-amber-500/10", label: "Status" },
-  assigned: { icon: UserPlus, color: "text-purple-500 bg-purple-500/10", label: "Assigned" },
+  assigned: { icon: UserPlus, color: "text-indigo-400 bg-indigo-400/10", label: "Assigned" },
   unassigned: { icon: UserMinus, color: "text-orange-500 bg-orange-500/10", label: "Unassigned" },
   relation_added: { icon: Link2, color: "text-cyan-500 bg-cyan-500/10", label: "Linked" },
   relation_removed: { icon: Unlink, color: "text-rose-500 bg-rose-500/10", label: "Unlinked" },

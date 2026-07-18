@@ -299,7 +299,7 @@ function ScanResultPanel({
 
           {result.entidad && (
             <div className="flex items-center gap-2.5 rounded-lg bg-background border border-border px-3 py-2">
-              <Building2 className="h-3.5 w-3.5 text-purple-500 flex-shrink-0" />
+              <Building2 className="h-3.5 w-3.5 text-indigo-400 flex-shrink-0" />
               <div className="min-w-0">
                 <p className="text-[10px] text-muted-foreground">Entity</p>
                 <p className="text-sm text-foreground font-medium truncate">{result.entidad}</p>
